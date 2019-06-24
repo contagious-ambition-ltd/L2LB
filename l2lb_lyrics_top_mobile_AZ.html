@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	
+	html {
+		font-family: "Lucida Sans", sans-serif;
+	}
+	
+	#top-wrapper{
+		display: grid; 
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+		grid-gap: 10px;"
+	}
+
+	.collapsable{
+		background-color: #fafafa;
+		font-size: 14px;
+		padding: 5px;
+	}
+
+	.list-header {
+		background-color: #111;
+		color: #ffffff;
+		padding: 15px;
+		margin: -5px;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	.all-lyrics-header {
+		background-color: #111;
+		color: #ffffff;
+		padding: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	.menu ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.menu li:hover {
+		background-color: #0099cc;
+	}
+
+
+	.lyriclist {
+		background-color: #fafafa;
+	}
+
+	a:link.toptenlist, a:active.toptenlist, a:visited.toptenlist {
+		text-transform: uppercase;
+		color: white;
+		font-weight: bold;
+	}
+
+	a:hover.toptenlist {
+		color: #999;
+	}
+
+	a:link, a:active {
+		color: black;
+	}
+
+	a:visited {
+		color: #666;
+	}
+
+	a:hover {
+		color: #999;
+	}
+
+	.collapsable li {
+		padding: 8px;
+		margin-bottom: 7px;
+		margin-left: -40px;
+		background-color: #444;
+		color: #ffffff;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		text-transform: capitalize;
+	}
+
+	.formentry{
+		width: 100%;
+		height: 1.5em;
+	}
+
+	/*
+	Below is from https://codepen.io/secondfret/pen/oexuc to beautify the Lyric List
+	*/
+
+	div.lyriclist {
+		width: 100%;
+		margin: 0px
+	}
+
+	ol.lyriclist {
+		color: #ccc;
+		list-style-type: none;
+	}
+
+	ol.lyriclist li  {
+		position: relative;
+		font: bold italic 45px/1.5 Helvetica, Verdana, sans-serif;
+		margin-bottom: 20px;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	li.lyriclist, li.lyriclist > p, li.lyriclist > a {
+		font: 14px/1.1 Helvetica, sans-serif;
+		margin: 0px;
+		padding-left: 60px;
+		color: #555;
+		text-decoration: underline;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	span.lyriclist {
+		position: absolute;
+	}
+
+	@media (min-width:660px) {
+
+			ol.lyriclist li  {
+			position: relative;
+			font: bold italic 45px/1.5 Helvetica, Verdana, sans-serif;
+			margin-bottom: 20px;
+			margin: 0px;
+		}
+
+		li.lyriclist, li.lyriclist > p, li.lyriclist > a {
+			font: 18px/1.1 Helvetica, sans-serif;
+			margin: 0px;
+			padding-left: 30%;
+			color: #555;
+			text-decoration: underline;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		span.lyriclist {
+			position: absolute;
+			padding-left: 20%;
+		}
+	}
+
+	</style>
+</head>
+
+
+<body>
+	<div id="top-wrapper">
+		<div class="collapsable">
+		  <p class="list-header"><b>Top Ten Lyrics</b><br/></p>
+		    <ol>
+		      <li style="background-color: #888;">
+		      	01 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=Whisper+Words+Of+Wisdom+The+Beatles" title="Whisper Words Of Wisdom">Whisper Words Of Wisdom</a></li>
+		      <li>
+		      	02 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=We+Can+Be+Heroes%2C+Just+For+One+Day+David+Bowie" title="We Can Be Heroes, Just For One Day">We Can Be Heroes, Just For One Day</a></li>
+		      <li style="background-color: #888;">
+		      	03 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=Is+She+Really+Going+Out+With+Him+Joe+Jackson" title="Is She Really Going Out With Him?">Is She Really Going Out With Him?</a></li>
+		      <li>
+		      	04 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=Somebody+Is+Humming+Bohemian+Rhapsody" title="Somewhere In The World Somebody Is Humming Bohemian Rhapsody">Somewhere In The World Somebody Is Humming Bohemian Rhapsody - Galileo</a></li>
+		      <li style="background-color: #888;">
+		      	05 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=I%27m+A+Creep%2C+I%27m+A+Weirdo+Radiohead" title="I'm A Creep, I'm A Weirdo">I'm A Creep, I'm A Weirdo</a></li>
+		      <li>
+		      	06 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=It%27s+The+End+Of+The+World+As+We+Know+It%2C+And+I+Feel+Fine+REM" title="It's The End Of The World As We Know It, And I Feel Fine">It's The End Of The World As We Know It, And I Feel Fine</a></li>
+		      <li style="background-color: #888;">
+		      	07 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=What%27s+So+Funny+About+Peace%2C+Love+And+Understanding+Elvis+Costello" title="What's So Funny About Peace, Love And Understanding">What's So Funny About Peace, Love And Understanding</a></strong></li>
+		      <li>
+		      	08 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=Some+People+Call+Me+The+Space+Cowboy+Steve+Miller+Band" title="Some People Call Me The Space Cowboy">Some People Call Me The Space Cowboy</a></li>
+		      <li style="background-color: #888;">
+		      	09 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=American+Idiot+Green+Day" title="American Idiot">American Idiot</a></li>
+		      <li>
+		      	10 - <a class="toptenlist" href="https://lyricstoliveby.store/search?q=Hey%2C+Hey%2C+My%2C+My+Neil+Young" title="Hey, Hey, My, My">Hey, Hey, My, My</a>
+		      </li>
+		    </ol>
+		</div>
+
+	  <div class="collapsable">
+	    <p class="list-header">Can't find your favorite?</p>
+	    <p>We try to pick the hottest lyrics for our shirts, but if your all-time favorite isn't there why not tell us?</p>
+	    <p>Simply enter your lyric below and if we add it to the store you'll get the first one hot off the press completely free!</p>
+		<form name="lyricsubmit" method="post" action="action_page.php" onsubmit="return validateForm()">
+			Your name:<br>
+			<input required class="formentry" type="text" name="firstname" placeholder="John Smith">
+			<br>
+			Your email address:<br>
+			<input required class="formentry" type="email" name="email" placeholder="johnsmith@myemailaddress.com">
+			<br>
+			Your lyric:<br>
+			<input required class="formentry" type="text" name="lyric" placeholder="Hey Hey My My">
+			<br>
+			Artist Name:<br>
+			<input required class="formentry" type="text" name="artist" placeholder="Neil Young">
+			<br><br><br>
+			Help us fight off robots! Using your numpad, how many strings does a standard guitar have?<br>
+			<input required class="formentry" type="number" name="validation" placeholder="???">
+			<input type="submit" value="SUBMIT">
+		</form> 
+	  </div>
+	</div>
+	<div>
+		<p class="all-lyrics-header"><strong>Click on your favorite lyric to see all products</strong></p>
+		<div class="lyriclist">
+			<ol class="lyriclist">
+				<li class="lyriclist">
+					<span class="lyriclist">A</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=A+Mulatto%2C+An+Albino%2C+A+Mosquito%2C+My+Libido+Nirvana" title="A Mulatto, An Albino, A Mosquito, My Libido">A Mulatto, An Albino, A Mosquito, My Libido</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=All+Night+Long+AC+DC" title="All Night Long">All Night Long</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=American+Idiot+Green+Day" title="American Idiot">American Idiot</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=American+Woman+Stay+Away+From+Me+Lenny+Kravitz" title="American Woman Stay Away From Me">American Woman Stay Away From Me</a>
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">B</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Baby+We+Were+Born+To+Run+Bruce+Springsteen" title="Baby We Were Born To Run">Baby We Were Born To Run</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Back+In+Black+AC+DC" title="Back In Black">Back In Black</a>
+						<br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">C</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Come+On+Baby+Light+My+Fire+The+Doors" title="Come On Baby Light My Fire">Come On Baby Light My Fire</a>
+						<br /><br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">D</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Do+You+Remember+When+We+Used+To+Sing+Sha+La+La+La+La+La+La+La+La+La+La+Te+Da+Van+Morrison" title="Do You Remember When We Used To Sing Sha La La La La La La La La La La Te Da">Do You Remember When We Used To Sing Sha La La La La La La La La La La Te Da</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Does+Anybody+Know+What+We+Are+Living+For+Queen" title="Does Anybody Know What We Are Living For?">Does Anybody Know What We Are Living For?</a>
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">G</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Get+It+On+T+Rex" title="Get It On">Get It On</a>
+						<br /><br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">H</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Hello%2C+I+Love+You%2C+Won%27t+You+Tell+Me+Your+Name+The+Cure" title="Hello, I Love You, Won't You Tell Me Your Name">Hello, I Love You, Won't You Tell Me Your Name?</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Hello%2C+Is+It+Me+You%27re+Looking+For+Lionel+Richie" title="Hello, Is It Me You're Looking For?">Hello, Is It Me You're Looking For?</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Hey%2C+Hey%2C+My%2C+My+Neil+Young" title="Hey, Hey, My, My">Hey, Hey, My, My</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=How+Come+You+Taste+So+Good+The+Rolling+Stones" title="How Come You Taste So Good?">How Come You Taste So Good?</a>
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">I</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=I+Got+99+Problems+Jay+Z" title="I Got 99 Problems">I Got 99 Problems</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=I+Would+Do+Anything%2C+But+I+Won%27t+Do+That+Meat+Loaf" title="I Would Do Anything, But I Won't Do That">I Would Do Anything, But I Won't Do That</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=I%27ll+Call+You+Jaguar+If+I+May+Be+So+Bold+T.Rex" title="I'll Call You Jaguar If I May Be So Bold">I'll Call You Jaguar If I May Be So Bold</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=I%27m+A+Creep%2C+I%27m+A+Weirdo+Radiohead" title="I'm A Creep, I'm A Weirdo">I'm A Creep, I'm A Weirdo</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=I%27m+Leaving+On+A+Jet+Plane+John+Denver" title="I'm Leaving On A Jet Plane">I'm Leaving On A Jet Plane</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=I%27ve+Made+Up+My+Mind%2C+I+Ain%27t+Wasting+No+More+Time+Whitesnake" title="I've Made Up My Mind, I Ain't Wasting No More Time">I've Made Up My Mind, I Ain't Wasting No More Time</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Instant+Karma%27s+Gonna+Get+You+Duran+Duran" title="Instant Karma's Gonna Get You">Instant Karma's Gonna Get You</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Is+She+Really+Going+Out+With+Him+Joe+Jackson" title="Is She Really Going Out With Him?">Is She Really Going Out With Him?</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=It+Doesn%27t+Even+Matter+How+Hard+You+Try+Linkin+Park" title="It Doesn't Even Matter How Hard You Try">It Doesn't Even Matter How Hard You Try</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=It%27s+The+End+Of+The+World+As+We+Know+It%2C+And+I+Feel+Fine+REM" title="It's The End Of The World As We Know It, And I Feel Fine">It's The End Of The World As We Know It, And I Feel Fine</a>
+						<br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">J</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Just+A+Small+Town+Girl%2C+Livin%27+In+A+Lonely+World+Journey" title="Just A Small Town Girl, Livin' In A Lonely World">Just A Small Town Girl, Livin' In A Lonely World</a>
+						<br /><br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">L</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Let+It+Be+The+Beatles" title="Let It Be">Let It Be</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Life+In+The+Fast+Lane+The+Eagles" title="Life In The Fast Lane">Life In The Fast Lane</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Love+Is+All+You+Need+The+Beatles" title="Love Is All You Need">Love Is All You Need</a>
+						<br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">M</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Mars+Ain%27t+The+Kind+Of+Place+To+Raise+Your+Kids+Elton+John" title="Mars Ain't The Kind Of Place To Raise Your Kids">Mars Ain't The Kind Of Place To Raise Your Kids</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=My+Spaceship+Knows+Which+Way+To+Go+David+Bowie" title="My Spaceship Knows Which Way To Go">My Spaceship Knows Which Way To Go</a>
+						<br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">P</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Papa+Was+Was+A+Rolling+Stone++%28Wyman%29" title="Papa Was Was A Rolling Stone (Mom Thinks It Was Bill Wyman)">Papa Was Was A Rolling Stone (Mom Thinks It Was Bill Wyman)</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Please+Allow+Me+To+Introduce+Myself+Rolling+Stones" title="Please Allow Me To Introduce Myself">Please Allow Me To Introduce Myself</a>
+						<br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">R</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Woke+Up+This+Morning%2C+Smiled+With+The+Rising+Sun+Bob+Marley" title="Rise Up This Morning, Smiled With The Rising Sun">Rise Up This Morning, Smiled With The Rising Sun</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Run+Away%2C+I%27ll+Attack+Thirty+Seconds+To+Mars" title="Run Away, I'll Attack">Run Away, I'll Attack</a>
+						<br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">S</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Shine+On+You+Crazy+Diamond+Pink+Floyd" title="Shine On You Crazy Diamond">Shine On You Crazy Diamond</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Should+I+Stay+Or+Should+I+Go+The+Clash" title="Should I Stay Or Should I Go?">Should I Stay Or Should I Go?</a>
+						<br /><br />
+						<strong><a href="https://lyricstoliveby.store/search?q=Smile+Like+You+Mean+It+The+Killers" title="Smile Like You Mean It">Smile Like You Mean It</a></strong>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Some+People+Call+Me+The+Space+Cowboy+Steve+Miller+Band" title="Some People Call Me The Space Cowboy">Some People Call Me The Space Cowboy</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Somebody+Is+Humming+Bohemian+Rhapsody" title="Somewhere In The World Somebody Is Humming Bohemian Rhapsody">Somewhere In The World Somebody Is Humming Bohemian Rhapsody - Galileo</a>
+						<br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">T</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=The+Boys+Are+Back+In+Town+Thin+Lizzy" title="The Boys Are Back In Town">The Boys Are Back In Town</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=The+Drugs+Don%27t+Work+The+Verve" title="The Drugs Don't Work">The Drugs Don't Work</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=The+Sun+Is+Up%2C+The+Sky+Is+Blue+The+Beatles" title="The Sun Is Up, The Sky Is Blue">The Sun Is Up, The Sky Is Blue</a>
+						<br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">W</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=Walk+The+Bridges+Before+You+Burn+Them+Down+Pearl+Jam" title="Walk The Bridges Before You Burn Them Down">Walk The Bridges Before You Burn Them Down</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=We+Can+Be+Heroes%2C+Just+For+One+Day+David+Bowie" title="We Can Be Heroes, Just For One Day">We Can Be Heroes, Just For One Day</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=What%27s+So+Funny+About+Peace%2C+Love+And+Understanding+Elvis+Costello" title="What's So Funny About Peace, Love And Understanding">What's So Funny About Peace, Love And Understanding</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=When+The+Train+Left+The+Station+It+Had+Two+Lights+On+Behind+The+Rolling+Stones" title="When The Train Left The Station It Had Two Lights On Behind">When The Train Left The Station It Had Two Lights On Behind</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Wherever+I+Lay+My+Phone+That%27s+My+Home+Super+Furry+Animals" title="Wherever I Lay My Phone That's My Home">Wherever I Lay My Phone That's My Home</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Whisper+Words+Of+Wisdom+The+Beatles" title="Whisper Words Of Wisdom">Whisper Words Of Wisdom</a><
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Wish+You+Were+Here+Pink+Floyd" title="Wish You Were Here">Wish You Were Here</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=Wrapped+Up+Like+A+Deuce+Manfred+Mann" title="Wrapped Up Like A Deuce">Wrapped Up Like A Deuce</a>
+						<br /><br />
+					</p>
+				</li>
+				<li class="lyriclist">
+					<span class="lyriclist">Y</span>
+					<p class="lyriclist">
+						<br />
+						<a href="https://lyricstoliveby.store/search?q=You+Rock+My+World+Michael+Jackson" title="You Rock My World">You Rock My World</a>
+						<br /><br />
+						<a href="https://lyricstoliveby.store/search?q=You+Won%27t+Fool+The+Children+Of+The+Revolution+T.Rex" title="You Won't Fool The Children Of The Revolution">You Won't Fool The Children Of The Revolution</a>
+						<br /><br />
+					</p>
+				</li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>
